@@ -11,17 +11,21 @@ import (
 func (app *Config) routes() http.Handler {
 	mux := chi.NewRouter()
 
-	// spcify who is allowed to connect
+	// specify who is allowed to connect
 	mux.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"https://*", "http://"},
+		// AllowedOrigins:   []string{"https://*", "http://*"},
+		// AllowCredentials: true,
+		AllowedOrigins:   []string{"*"},
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
 		ExposedHeaders:   []string{"Link"},
-		AllowCredentials: true,
+		AllowCredentials: false,
 		MaxAge:           300,
 	}))
 
 	mux.Use(middleware.Heartbeat("/ping"))
+
 	mux.Post("/", app.Broker)
+
 	return mux
 }
