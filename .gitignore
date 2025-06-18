@@ -1,0 +1,25 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Go workspace binary
+*.out
+
+# Compiled Go packages (Go modules cache)
+pkg/
+
+# Dependency directories (e.g., vendor)
+vendor/
+
+# IDE-specific files (e.g., VS Code, IntelliJ)
+.vscode/
+.idea/
+
+# Operating system generated files
+.DS_Store
+Thumbs.db
