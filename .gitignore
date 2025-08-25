@@ -23,4 +23,4 @@ vendor/
 # Operating system generated files
 .DS_Store
 Thumbs.db
-.project/db-data/*
+./project/db-data/*
