@@ -68,6 +68,7 @@ func connnectToDB() *sql.DB {
 	dsn := os.Getenv("DSN")
 
 	for {
+
 		connection, err := openDB(dsn)
 		if err != nil {
 			log.Println("Postgres not yet ready...")
