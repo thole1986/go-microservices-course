@@ -81,9 +81,9 @@ func connnectToDB() *sql.DB {
 			log.Println(err)
 			return nil
 		}
-
 		log.Println("Backing off for 2 seconds...")
 		time.Sleep(2 * time.Second)
+
 		continue
 	}
 }
